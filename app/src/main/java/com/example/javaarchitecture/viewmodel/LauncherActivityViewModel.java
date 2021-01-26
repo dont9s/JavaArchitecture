@@ -13,8 +13,6 @@ import androidx.paging.PagedList;
 import com.example.javaarchitecture.data.GithubUser;
 import com.example.javaarchitecture.repository.GithubRepository;
 
-import javax.inject.Inject;
-
 
 public class LauncherActivityViewModel extends ViewModel {
 

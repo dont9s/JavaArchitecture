@@ -6,10 +6,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <com.example.javaarchitecture.view.ImageTextView
+            android:id="@+id/itv_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:image_size="150dp"
+            app:layout_constraintBottom_toTopOf="@id/rv_github_users"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_size="30sp" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_github_users"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itv_custom" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

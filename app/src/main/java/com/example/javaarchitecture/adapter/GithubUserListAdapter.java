@@ -1,7 +1,6 @@
 package com.example.javaarchitecture.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -16,7 +15,7 @@ import com.example.javaarchitecture.databinding.ItemGithubUserBinding;
 import com.squareup.picasso.Picasso;
 
 public class GithubUserListAdapter extends PagedListAdapter<GithubUser, GithubUserListAdapter.GithubUserViewHolder> {
-    public  GithubUserListAdapter() {
+    public GithubUserListAdapter() {
         super(DIFF_CALLBACK);
     }
 
@@ -55,7 +54,7 @@ public class GithubUserListAdapter extends PagedListAdapter<GithubUser, GithubUs
         }
 
         public void bindTo(GithubUser githubUser) {
-            Picasso.get().load(githubUser.getAvatar_url()).into(binding.ivAvatar);
+            Picasso.get().load(githubUser.getAvatarUrl()).into(binding.ivAvatar);
             binding.setGithubUser(githubUser);
         }
 

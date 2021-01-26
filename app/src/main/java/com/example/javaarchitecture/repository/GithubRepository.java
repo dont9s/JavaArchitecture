@@ -35,7 +35,7 @@ public class GithubRepository {
     }
 
 
-    private void refreshUsers() {
+    public void refreshUsers() {
         // Runs in a background thread.
         singleCoreExecutor.execute(() -> {
 
