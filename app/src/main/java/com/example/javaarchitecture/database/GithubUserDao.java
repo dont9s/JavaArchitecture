@@ -16,6 +16,9 @@ public interface GithubUserDao {
     @Query("SELECT * FROM githubuser")
     DataSource.Factory<Integer, GithubUser> getAllUsers();
 
+    @Query("SELECT * FROM githubuser")
+    List<GithubUser> getAllUsersList();
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<GithubUser> users);
 

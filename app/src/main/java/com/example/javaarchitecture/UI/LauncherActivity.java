@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.javaarchitecture.R;
 import com.example.javaarchitecture.adapter.GithubUserListAdapter;
@@ -39,6 +40,15 @@ public class LauncherActivity extends AppCompatActivity {
         launcherBinding.rvGithubUsers.setAdapter(adapter);
 
         viewModel.getGithubUsers().observe(this, adapter::submitList);
+
+        viewModel.getRefreshState()
+
+        launcherBinding.srlRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                viewModel.invalidateDataSource();
+            }
+        });
 
 
     }

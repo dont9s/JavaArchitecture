@@ -8,6 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.javaarchitecture.database.GithubUserDao;
 import com.example.javaarchitecture.database.JavaArchitectureDatabase;
+import com.example.javaarchitecture.paging.githubuser.GithubUserDataSourceFactory;
 import com.example.javaarchitecture.qualifier.DatabaseMigration;
 import com.example.javaarchitecture.repository.GithubRepository;
 import com.example.javaarchitecture.retrofit.GithubUserApi;
@@ -107,6 +108,12 @@ public abstract class ApplicationModule {
     public static GithubRepository getGithubRepository(GithubUserApi userApi,
                                                        GithubUserDao githubUserDao, Executor singleCoreExecutor) {
         return new GithubRepository(userApi, githubUserDao, singleCoreExecutor);
+    }
+
+    @Singleton
+    @Provides
+    public static GithubUserDataSourceFactory provideGithubUserDataSourceFactory(GithubUserDao githubUserDao) {
+        return new GithubUserDataSourceFactory(githubUserDao);
     }
 
 
